@@ -3,24 +3,29 @@ package com.giraldo.jaime.tallerunoredes;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
+import android.view.Window;
+import android.view.WindowManager;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
-    Button left;
-    Button right;
-    Button shoot;
+    ImageButton left;
+    ImageButton right;
+    ImageButton shoot;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
         setContentView(R.layout.activity_main);
 
-        left = (Button) findViewById(R.id.leftButton);
-        right = (Button) findViewById(R.id.rightButton);
-        shoot = (Button) findViewById(R.id.shootButton);
+        left = (ImageButton) findViewById(R.id.leftButton);
+        right = (ImageButton) findViewById(R.id.rightButton);
+        shoot = (ImageButton) findViewById(R.id.shootButton);
 
         left.setOnClickListener(this);
         right.setOnClickListener(this);
