@@ -49,7 +49,7 @@ public class Comunicacion implements Runnable {
                 if (s != null) {
                     try {
                         InetAddress ipEnvio = null;
-                        ipEnvio = InetAddress.getByName("172.30.161.23");
+                        ipEnvio = InetAddress.getByName("192.168.108.36");
                         DatagramPacket paqueteEnviar = new DatagramPacket(pack, pack.length, ipEnvio, PORT);
                         s.send(paqueteEnviar);
                     } catch (UnknownHostException e) {
