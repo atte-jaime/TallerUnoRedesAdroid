@@ -13,7 +13,9 @@ import java.net.UnknownHostException;
 
 public class Comunicacion implements Runnable {
     private static Comunicacion ref;
-    public static final String android = "10.0.2.2";
+    public static final String enCasa = "192.168.0.13";
+    public static  final String en301Cable = "192.168.108.36";
+    public static final String en301Wifi= "172.30.161.23";
     public static final int PORT = 6000;
     private DatagramSocket s;
 
@@ -49,7 +51,7 @@ public class Comunicacion implements Runnable {
                 if (s != null) {
                     try {
                         InetAddress ipEnvio = null;
-                        ipEnvio = InetAddress.getByName("192.168.108.36");
+                        ipEnvio = InetAddress.getByName(enCasa);
                         DatagramPacket paqueteEnviar = new DatagramPacket(pack, pack.length, ipEnvio, PORT);
                         s.send(paqueteEnviar);
                     } catch (UnknownHostException e) {

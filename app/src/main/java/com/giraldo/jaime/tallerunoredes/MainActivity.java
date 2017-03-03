@@ -8,12 +8,12 @@ import android.view.WindowManager;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     ImageButton left;
     ImageButton right;
     ImageButton shoot;
-
+    ImageButton shoot2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,10 +26,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         left = (ImageButton) findViewById(R.id.leftButton);
         right = (ImageButton) findViewById(R.id.rightButton);
         shoot = (ImageButton) findViewById(R.id.shootButton);
+        shoot2 = (ImageButton) findViewById(R.id.shootButton2);
 
         left.setOnClickListener(this);
         right.setOnClickListener(this);
         shoot.setOnClickListener(this);
+        shoot2.setOnClickListener(this);
     }
 
 
@@ -46,7 +48,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             Comunicacion.instancia().enviar(mensaje.getBytes());
             Toast.makeText(getApplicationContext(), "Se envió un comando de RIGHT", Toast.LENGTH_LONG).show();
 
-        } else if (v.getId() == shoot.getId()) {
+        } else if ((v.getId() == shoot.getId()) || (v.getId() == shoot2.getId())) {
             mensaje = "shoot";
             Comunicacion.instancia().enviar(mensaje.getBytes());
             Toast.makeText(getApplicationContext(), "Se envió un comando de SHOOT", Toast.LENGTH_LONG).show();

@@ -42,7 +42,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/shoot_click"
-        android:id="@+id/shootButton"
+        android:id="@+id/shootButton2"
         android:background="#00000000"
         android:scaleType="centerInside"
         android:elevation="0dp"
@@ -50,5 +50,18 @@
         android:scaleX="0.7"
         android:layout_above="@+id/rightButton"
         android:layout_alignStart="@+id/rightButton" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/shoot_click"
+        android:id="@+id/shootButton"
+        android:background="#00000000"
+        android:scaleType="centerInside"
+        android:elevation="0dp"
+        android:scaleY="0.7"
+        android:scaleX="0.7"
+        android:layout_alignTop="@+id/shootButton2"
+        android:layout_alignStart="@+id/leftButton" />
 
 </RelativeLayout>
